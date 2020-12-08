@@ -235,7 +235,7 @@ class FrameworkCoverage:
         debuggable = [activity["title"] for activity in js["manifest_analysis"]
                       if activity["title"].find("debug") >= 0 and
                       activity["title"].lower().find("true") >= 0]
-        debuggable = len(debuggable) >= 0
+        debuggable = len(debuggable) > 0
         self.scenarios["Code2"] = Code2(not debuggable)
 
         for library in js["binary_analysis"]:

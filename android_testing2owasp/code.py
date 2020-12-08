@@ -40,8 +40,8 @@ class Code3(TestScenario):
         if _stripped is not None:
             self.stripped = _stripped
         else:
-            if is_stripped is not None:
-                is_stripped = False
+            if is_stripped is None:
+                is_stripped = True
             self.stripped[name] = is_stripped
 
     def combine(self, other):
@@ -70,8 +70,8 @@ class Code4(TestScenario):
         if _stripped is not None:
             self.stripped = _stripped
         else:
-            if is_stripped is not None:
-                is_stripped = False
+            if is_stripped is None:
+                is_stripped = True
             self.stripped[name] = is_stripped
 
         if not_debuggable is not None:
