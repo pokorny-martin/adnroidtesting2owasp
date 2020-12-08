@@ -11,30 +11,32 @@ parser.add_argument("-o", type=str, help="Path to output directory")
 args = parser.parse_args()
 frameworks = []
 for key, value in args.__dict__.items():
-        if key == "aw":
-            try:
-                frameworks.append(framework_coverage.FrameworkCoverage(value))
-                frameworks[-1].parse("Androwarn")
-            except FileNotFoundError:
-                print("Invalid path to Androwarn output was given")
-        elif key == "ap":
-            try:
-                frameworks.append(framework_coverage.FrameworkCoverage(value))
-                frameworks[-1].parse("AndroPyTool")
-            except FileNotFoundError:
-                print("Invalid path to AndroPyTool output was given")
-        elif key == "ab":
-            try:
-                frameworks.append(framework_coverage.FrameworkCoverage(value))
-                frameworks[-1].parse("AndroBugs")
-            except FileNotFoundError:
-                print("Invalid path to AndroBugs output was given")
-        elif key == "sf":
-            try:
-                frameworks.append(framework_coverage.FrameworkCoverage(value))
-                frameworks[-1].parse("MobSF")
-            except FileNotFoundError:
-                print("Invalid path to MobSF output was given")
+    if value is None:
+        continue
+    if key == "aw":
+        try:
+            frameworks.append(framework_coverage.FrameworkCoverage(value))
+            frameworks[-1].parse("Androwarn")
+        except FileNotFoundError:
+            print("Invalid path to Androwarn output was given")
+    elif key == "ap":
+        try:
+            frameworks.append(framework_coverage.FrameworkCoverage(value))
+            frameworks[-1].parse("AndroPyTool")
+        except FileNotFoundError:
+            print("Invalid path to AndroPyTool output was given")
+    elif key == "ab":
+        try:
+            frameworks.append(framework_coverage.FrameworkCoverage(value))
+            frameworks[-1].parse("AndroBugs")
+        except FileNotFoundError:
+            print("Invalid path to AndroBugs output was given")
+    elif key == "sf":
+        try:
+            frameworks.append(framework_coverage.FrameworkCoverage(value))
+            frameworks[-1].parse("MobSF")
+        except FileNotFoundError:
+            print("Invalid path to MobSF output was given")
 
 
 final = framework_coverage.FrameworkCoverage()
