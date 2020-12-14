@@ -7,7 +7,8 @@ Combining of outputs is done with two rules in mind:
 2. any other (usually list of strings) - all data are taken, if any detailed information is supplied, none is deleted, all are taken; so the user has the most information to based his opinion on  
 
 ## Usage
-``python android_t2owasp.py -h
+```
+python android_t2owasp.py -h
 usage: android_t2owasp.py [-h] [-aw AW] [-ap AP] [-ab AB] [-sf SF] [-o O]
 
 optional arguments:
@@ -16,7 +17,8 @@ optional arguments:
   -ap AP      Path to AndroPyTool output
   -ab AB      Path to Androbugs output
   -sf SF      Path to MobSF output
-  -o O        Path to output directory``
+  -o O        Path to output directory
+ ```
   
 Tested on python3.8.2.  
 Uses just standard libraries.  
